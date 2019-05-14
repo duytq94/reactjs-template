@@ -1,0 +1,64 @@
+@import "../../general/colors.css";
+@import "../../general/fonts.css";
+@import "../../general/fontSize.css";
+
+.viewPort {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewRoot {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: var(--bgRoot);
+
+}
+
+.viewLoading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    opacity: 0.5;
+}
+
+/*Header*/
+.viewHeader {
+    height: 50px;
+    align-self: stretch;
+    background-color: var(--theme);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.iconHeader {
+    width: 25px;
+    height: 25px;
+}
+
+.textHeader {
+    color: white;
+    font-size: var(--large);
+    font-family: 'demiBold';
+    margin-left: 20px;
+}
+
+.btnHeader {
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}

@@ -1,0 +1,59 @@
+/* Header */
+
+.userScreenHeader {
+    height: 50px;
+    align-self: stretch;
+    background-color: var(--theme);
+    display: flex;
+    align-items: center;
+}
+
+.userScreenTextHeader {
+    color: white;
+    font-size: var(--large);
+    font-family: 'demiBold';
+    margin-left: 20px;
+}
+
+/* Body */
+.userScreenBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userScreenBtn {
+    width: 150px;
+    height: 50px;
+    outline: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--charcoalGrey);
+    margin-top: 20px;
+}
+
+.userScreenTextBtn {
+    color: white;
+    font-size: var(--medium);
+    font-family: 'regular';
+}
+
+.userScreenViewWrapData {
+    display: flex;
+    flex-direction: column;
+}
+
+.userScreenImgAvatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.userScreenTextData {
+    color: var(--charcoalGrey);
+    font-size: var(--medium);
+    font-family: 'regular';
+    margin-top: 10px;
+}

@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import createSagaMiddleware from 'redux-saga'
+import storage from 'redux-persist/lib/storage'
+import {applyMiddleware, createStore} from 'redux'
+import {persistReducer, persistStore} from 'redux-persist'
+import {Provider} from 'react-redux'
+import {PersistGate} from 'redux-persist/integration/react'
+import rootReducer from './general/reducers'
+import rootSaga from './general/sagas'
+import RootScreen from './screens/Root/Root.Screen'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const sagaMiddleware = createSagaMiddleware()
+const persistConfig = {
+    key: 'root',
+    storage,
+    whitelist: []
 }
 
-export default App;
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+const store = createStore(persistedReducer, applyMiddleware(sagaMiddleware))
+const persistor = persistStore(store)
+
+sagaMiddleware.run(rootSaga)
+
+export default class App extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <PersistGate loading={null} persistor={persistor}>
+                    <RootScreen/>
+                </PersistGate>
+            </Provider>
+        )
+    }
+}
