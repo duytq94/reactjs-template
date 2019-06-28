@@ -1,9 +1,9 @@
 # ReactJS Template
 
-## Description:
+## Description
 * Template project with Redux, Saga, React Router.
 
-## How to run:
+## How to run
 * Clone this project and at root project:
 * Run `npm install` to install packages
 * Run `npm start` to run the web on localhost
